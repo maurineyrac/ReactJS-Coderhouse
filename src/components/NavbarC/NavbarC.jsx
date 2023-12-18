@@ -13,21 +13,15 @@ const NavbarC = () => {
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container className='align-items-baseline align-items-lg-center'>
                     <div className='d-lg-flex'>
-                        <Navbar.Brand href="#home">Proyecto E-commerce</Navbar.Brand>
+                        <Navbar.Brand href="#home">Sunglasses</Navbar.Brand>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link href="#home">Home</Nav.Link>
-                                <Nav.Link href="#link">Link</Nav.Link>
-                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Another action
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">
-                                        Separated link
-                                    </NavDropdown.Item>
+
+                                <NavDropdown title="Categorias" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="#action/3.1">Sol</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.2">Moda</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.3">Deportivos</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>
