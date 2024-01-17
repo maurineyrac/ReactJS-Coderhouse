@@ -1,0 +1,178 @@
+.card-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgba(240, 240, 240, 0.829);
+}
+
+.productcard {
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    max-width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: white;
+}
+.cardimg {
+    padding: 15px;
+    max-width: 210px;
+    display: flex;
+    justify-content: center;
+}
+.cardimg2 {
+    object-fit: contain;
+    max-width: 200px;
+    height: auto;
+    
+}
+
+.cardbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cardbody h4 {
+    font-size: 16px;
+    max-width: 180px;
+    text-align: center;
+}
+
+.cardsec1 {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 140px;
+
+}
+
+.btt-infoenvio {
+    color: white;
+    border-radius: 5px;
+    /* background-color: rgb(49, 197, 255); */
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    padding: 6px 15px;
+    width: 100%;
+    max-width: 140px;
+    position: relative;
+    height: 22px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btt-infoenvio::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: 'Llega mañana (CABA)';
+    transition: all .3s;
+    margin: 0;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 1;
+    
+}
+
+.btt-infoenvio::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: 'DETALLE';
+    transition: all .3s;
+    margin: 0;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 1;
+    background-image: linear-gradient(144deg, #04ec04, #42f342 50%, #a5eb00);
+}
+
+.btt-infoenvio:hover::before {
+    top: -22px;
+}
+
+.btt-infoenvio:hover::after {
+    top: 0;
+}
+
+.btt-infoenvio p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.cardsec2 {
+    display: flex;
+    margin-bottom: 10px;
+    /* border: 1px solid rgb(66, 190, 221); */
+    border-radius: 6px;
+    max-width: 200px;
+    align-items: center;
+}
+
+.star {
+    color: rgb(196, 108, 223);
+}
+
+.bsec2 {
+    padding: 2px;
+    margin-left: 5px;
+    line-height: 1;
+}
+
+.cardsec2 h6 {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: rgb(66, 190, 221);
+}
+
+.cardsec2 p {
+    font-size: 0.6rem;
+    margin-bottom: 0;
+    color: rgb(146, 146, 146);
+
+}
+
+.cardfoot {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    z-index: 1001;
+    
+    margin: 10px 0 10px;
+
+}
+
+.cardsec3 .precio h5 {
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.cardsec3 .precio p {
+    margin: 0;
+    font-size: 0.6rem;
+    color: rgb(146, 146, 146);
+    line-height: 0.6rem;
+
+}
