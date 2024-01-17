@@ -20,9 +20,9 @@ const NavbarC = () => {
                                 <Nav.Link as={Link} to='/'>Home</Nav.Link>
 
                                 <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                                    <NavDropdown.Item as={Link} to={'/category/clasicos'}>Sol</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to={'/category/moda'}>Moda</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to={'/category/deportivos'}>Deportivos</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/categories/clasicos'}>Sol</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/categories/moda'}>Moda</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/categories/deportivos'}>Deportivos</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>

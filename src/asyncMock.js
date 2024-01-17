@@ -13,7 +13,7 @@ const products = [
         name: "Wayfarer",
         price: 18000,
         category: "moda",
-        img: "https://acdn.mitiendanube.com/stores/001/639/512/products/21321-2ef48dbde32963805a16202199325779-480-0.jpg",
+        img: "https://i0.wp.com/opticassociales.com.ar/wp-content/uploads/2022/04/Ray-Ban-Wayfarer-RB2140-901-58-3.jpg?fit=1080%2C1080&ssl=1",
         stock: 40,
         description: "Gafas de sol wayfarer de moda que nunca pasan de moda."
     },
@@ -67,7 +67,7 @@ export const getProductsByCategory = (category) => {
     return new Promise((resolve, reject) =>
         setTimeout(() => {
             resolve(products.filter(prod => prod.category === category))
-        }, 500)
+        }, 200)
     )
 }
 

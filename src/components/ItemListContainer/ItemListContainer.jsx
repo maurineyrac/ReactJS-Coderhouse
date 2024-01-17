@@ -12,10 +12,15 @@ const ItemListContainer = ({ greeting }) => {
   const { category } = useParams()
 
   useEffect(() => {
-    category ?
+    category
+      ?
       getProductsByCategory(category).then(res => {
         setProducts(res)
-      }) :
+      }).finally(() => {
+        setLoading(false)
+      }
+      )
+      :
       getProducts().then(res => {
         setProducts(res)
       }).finally(() => {
@@ -25,24 +30,24 @@ const ItemListContainer = ({ greeting }) => {
   }, [category])
 
   return (
-    
+
     <div className="text-center">
       {loading
-      
+
         ?
         <div>Cargando... </div>
         :
         <>
-        <div className="container" >
-        <div className="fs-1">{greeting}</div>
-        <ItemList products={products} />
-        </div>
-        
+          <div className="container" >
+            <div className="fs-1">{greeting}</div>
+            <ItemList products={products} />
+          </div>
+
         </>
-        
+
       }
     </div>
-    
+
   )
 }
 
