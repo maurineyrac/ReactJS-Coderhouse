@@ -8,7 +8,7 @@ const ItemListContainer = ({ greeting }) => {
 
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
-
+  console.log(loading)
   const { category } = useParams()
 
   useEffect(() => {
@@ -25,17 +25,24 @@ const ItemListContainer = ({ greeting }) => {
   }, [category])
 
   return (
-    <div className="d-flex justify-content-center fs-1">
+    
+    <div className="text-center">
       {loading
+      
         ?
         <div>Cargando... </div>
         :
         <>
-        <div>{greeting}</div>
+        <div className="container" >
+        <div className="fs-1">{greeting}</div>
         <ItemList products={products} />
+        </div>
+        
         </>
+        
       }
     </div>
+    
   )
 }
 

@@ -14,7 +14,7 @@ const NavbarC = () => {
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container className='align-items-baseline align-items-lg-center'>
                     <div className='d-lg-flex'>
-                        <Navbar.Brand href="#home">Sunglasses</Navbar.Brand>
+                        <Navbar.Brand as={Link} to='/'>Sunglasses</Navbar.Brand>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link as={Link} to='/'>Home</Nav.Link>

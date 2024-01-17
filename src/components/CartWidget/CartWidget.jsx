@@ -1,12 +1,11 @@
 import { BsCart2 } from "react-icons/bs";
-import ButtonC from "../Button/ButtonC";
 
 
 const CartWidget = () => {
   return (
     <>
     <BsCart2/>
-    <ButtonC valor1='1'/>
+    <span className="badge rounded-pill text-bg-dark">1</span>
     </>
   )
 }

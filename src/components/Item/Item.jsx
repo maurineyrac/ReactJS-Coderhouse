@@ -4,7 +4,7 @@ import './Item.css'
 
 const Item = ({product}) => {
   return (
-    <section className="card-section">
+    <section className="card-section col-6 col-md-4 col-lg-3">
         <div className="productcard">
 
             <div className="cardimg">
@@ -12,7 +12,7 @@ const Item = ({product}) => {
             </div>
 
             <div className="cardbody">
-                <h4>{`${product.name}`}</h4>
+                <h4>{product.name}</h4>
                 <div className="cardsec1">
                     <Link to={`/product/${product.id}`} className="btt-infoenvio">
                         
@@ -22,7 +22,7 @@ const Item = ({product}) => {
                 <div className="cardfoot">
                     <div className="cardsec3">
                         <div className="precio">
-                            <h5>`${product.price}`</h5>
+                            <h5>$ {product.price}</h5>
                             <p>Precio Especial</p>
                         </div>
                     </div>
