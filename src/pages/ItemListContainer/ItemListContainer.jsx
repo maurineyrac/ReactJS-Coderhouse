@@ -31,22 +31,22 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
 
-    <div className="text-center">
+    <>
       {loading
 
         ?
-        <div>Cargando... </div>
+        <div className="text-center">Cargando... </div>
         :
         <>
-          <div className="container" >
-            <div className="fs-1">{greeting}</div>
+          <section className="container" >
+            <div className="fs-1 text-center">{greeting}</div>
             <ItemList products={products} />
-          </div>
+          </section>
 
         </>
 
       }
-    </div>
+    </>
 
   )
 }

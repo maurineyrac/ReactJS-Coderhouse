@@ -4,7 +4,7 @@ import './Item.css'
 
 const Item = ({product}) => {
   return (
-    <section className="card-section col col-sm-6  col-md-4 col-lg-3">
+    <div className="card-section col col-sm-6  col-md-4 col-lg-3">
         <div className="productcard">
 
             <div className="cardimg">
@@ -43,7 +43,7 @@ const Item = ({product}) => {
             </div>
 
         </div>
-    </section>
+    </div>
   )
 }
 

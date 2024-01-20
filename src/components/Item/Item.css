@@ -14,7 +14,12 @@
     justify-content: center;
     align-items: center;
     height: auto;
-    background-color: white;
+    transition: all .2s;
+}
+
+.productcard:hover{
+    transform: scale(1.1);
+
 }
 .cardimg {
     padding: 5px;
