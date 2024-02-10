@@ -9,47 +9,8 @@ import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore'
 import { products as mockProducts } from '../../asyncMock'; // Importa los productos de asyncMock
 import ButtonAlt from "../../components/Button/ButtonAlt";
 import { PiTrashLight } from "react-icons/pi";
-// const Admin = () => {
-//     const { authed, setAuthed } = useAuth();
-//     const productsRef = collection(db, 'products');
-//     const navigate = useNavigate();
 
-//     const handleUpload = () => {
-//         mockProducts.forEach((product) => {
-//             addDoc(productsRef, product);
-//             navigate('/');
-//         });
 
-//     };
-
-//     const handleLogout = async () => {
-//         await signOut(auth);
-//         setAuthed(false);
-//         navigate('/');
-//     };
-
-//     if (!authed) {
-//         return (
-//             <>
-//                 <div>No estás autorizado para ver esta página.</div>
-//                 <Link to='/login'>
-//                 <button>Iniciar sesión</button>
-//                 </Link>
-//             </>
-//         );
-
-//     }
-
-//     return (
-//         <div>
-//             <h1>Panel de Administrador</h1>
-//             <button onClick={handleUpload}>Subir Productos</button>
-//             <button onClick={handleLogout}>Cerrar sesión</button>
-//         </div>
-//     );
-// }
-
-// export default Admin;
 
 
 const Admin = () => {
@@ -74,21 +35,18 @@ const Admin = () => {
             query(collection(db, "products"), where("category", "==", category))
             :
             collection(db, "products")
-
-
         fetchProducts(productsRef);
     }, [category]);
 
 
     const handleUpload = async () => {
         try {
-            
             await Promise.all(mockProducts.map(async (product) => {
                 await addDoc(productsRef, product);
             }));
             console.log('Productos subidos con éxito');
-
-            fetchProducts(productsRef); // Llama a la función fetchProducts que obtiene los productos de Firebase
+            // Actualiza la lista de productos
+            fetchProducts(productsRef);
         } catch (error) {
             console.error('Error al subir productos', error);
         }
@@ -130,7 +88,7 @@ const Admin = () => {
             <>
                 <div>No estás autorizado para ver esta página.</div>
                 <Link to='/login'>
-                    <ButtonAlt label='Iniciar sesión' />
+                    <button>Iniciar sesion</button>
                 </Link>
             </>
         );

@@ -27,10 +27,10 @@ function Login() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Correo electrónico" />
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
-            <ButtonAlt label='Iniciar sesión' />
+            <button>Iniciar sesion</button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
     );

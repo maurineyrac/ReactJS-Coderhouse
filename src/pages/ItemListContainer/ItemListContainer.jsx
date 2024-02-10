@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "../../components/ItemList/ItemList"
-import { getProducts, getProductsByCategory } from "../../asyncMock"
 import { InfinitySpin } from "react-loader-spinner"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../services/fbconfig"
@@ -14,22 +13,7 @@ const ItemListContainer = ({ greeting }) => {
 
 
   useEffect(() => {
-    // category
-    //   ?
-    //   getProductsByCategory(category)
-    //     .then(res => {
-    //       setProducts(res)
-    //     }).finally(() => {
-    //       setLoading(false)
-    //     }
-    //     )
-    //   :
-    //   getProducts().then(res => {
-    //     setProducts(res)
-    //   }).finally(() => {
-    //     setLoading(false)
-    //   }
-    //   )
+
     const productsRef = category
       ?
       query(collection(db, "products"), where("category", "==", category))

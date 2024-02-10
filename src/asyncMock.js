@@ -54,27 +54,3 @@ export const products = [
         description: "Gafas de sol elegantes y ligeras diseñadas para corredores."
     }
 ]
-
-export const getProducts = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products)
-        }, 500)
-    })
-}
-
-export const getProductsByCategory = (category) => {
-    return new Promise((resolve, reject) =>
-        setTimeout(() => {
-            resolve(products.filter(prod => prod.category === category))
-        }, 200)
-    )
-}
-
-export const getProductById = (id) => {
-    return new Promise((resolve, reject) =>
-        setTimeout(() => {
-            resolve(products.find(prod => prod.id.toString() === id))
-        }, 500)
-    )
-}

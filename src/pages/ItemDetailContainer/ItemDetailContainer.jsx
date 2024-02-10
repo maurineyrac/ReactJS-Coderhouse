@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
-import { getProductById } from '../../asyncMock'
+
 import { InfinitySpin } from "react-loader-spinner";
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../services/fbconfig';
@@ -11,11 +11,7 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    // getProductById(id).then(res => {
-    //   setProduct(res)
-    // }).finally(() => {
-    //   setLoading(false)
-    // })
+
     const productRef = doc(db, "products", id)
 
     getDoc(productRef)
