@@ -11,10 +11,6 @@ import Admin from './pages/Admin/Admin';
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Admin/Login';
 
-
-
-
-
 function App() {
 
   return (

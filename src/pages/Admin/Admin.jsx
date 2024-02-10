@@ -52,8 +52,6 @@ import { PiTrashLight } from "react-icons/pi";
 // export default Admin;
 
 
-
-
 const Admin = () => {
     const { authed, setAuthed } = useAuth();
     const [products, setProducts] = useState([]);
@@ -84,13 +82,12 @@ const Admin = () => {
 
     const handleUpload = async () => {
         try {
-            // Aquí cargas los productos desde asyncMock
+            
             await Promise.all(mockProducts.map(async (product) => {
                 await addDoc(productsRef, product);
             }));
             console.log('Productos subidos con éxito');
 
-            // Una vez que se completen todas las operaciones de carga, actualiza el estado de los productos
             fetchProducts(productsRef); // Llama a la función fetchProducts que obtiene los productos de Firebase
         } catch (error) {
             console.error('Error al subir productos', error);
