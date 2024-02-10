@@ -1,33 +1,51 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 import { getProductById } from '../../asyncMock'
+import { InfinitySpin } from "react-loader-spinner";
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../services/fbconfig';
 
 const ItemDetailContainer = () => {
-    const { id } = useParams()
-    const [product, setProduct] = useState(null)
-    const [loading, setLoading] = useState(true)
-    console.log(loading)
-    useEffect(() => {
-        getProductById(id).then(res => {
-            setProduct(res)
-            setLoading(false)
-        })
+  const { id } = useParams()
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    // getProductById(id).then(res => {
+    //   setProduct(res)
+    // }).finally(() => {
+    //   setLoading(false)
+    // })
+    const productRef = doc(db, "products", id)
 
-    }, [id])
+    getDoc(productRef)
+      .then(docSnap => {
+          const data = docSnap.data()
+          const productDb = { id: docSnap.id, ...data }
+          setProduct(productDb)
+        
+      }).finally(() => {
+        setLoading(false)
+      })
 
-    return (
-        <div className="text-center">
-            {
-                loading
-                    ?
-                    <div>Cargando... </div>
-                    :
-                    <ItemDetail product={product} />
-            }
-        </div>
-    )
+  }, [id])
+
+  return (
+    <div className="text-center">
+      {
+        loading
+          ?
+          <InfinitySpin
+            visible={true}
+            width="200"
+            color="#5b44f3"
+            ariaLabel="infinity-spin-loading"
+          />
+          :
+          <ItemDetail product={product} />
+      }
+    </div>
+  )
 }
 
 export default ItemDetailContainer

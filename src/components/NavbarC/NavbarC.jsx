@@ -27,7 +27,8 @@ const NavbarC = () => {
                             </Nav>
                         </Navbar.Collapse>
                     </div>
-                    <div><CartWidget />
+                    <div className='d-flex align-items-center'>
+                        <CartWidget />
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     </div>
                 </Container>

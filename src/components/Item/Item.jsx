@@ -4,7 +4,7 @@ import './Item.css'
 
 const Item = ({product}) => {
   return (
-    <div className="card-section col col-sm-6  col-md-4 col-lg-3">
+    <div className="card-section col col-sm-6 col-md-4 col-lg-3">
         <div className="productcard">
 
             <div className="cardimg">
@@ -23,7 +23,7 @@ const Item = ({product}) => {
                     <div className="cardsec3">
                         <div className="precio">
                             <h5>$ {product.price}</h5>
-                            <p>Precio Especial</p>
+                            <p className='text-start'>Precio Especial</p>
                         </div>
                     </div>
                     <div className="favicon">
@@ -36,7 +36,7 @@ const Item = ({product}) => {
                     </div>
                     <div className="bsec2">
                         <h6>12 cuotas sin interes!</h6>
-                        <p>del precio de lista</p>
+                        <p className='text-start' >del precio de lista</p>
                     </div>
                 </div>
 

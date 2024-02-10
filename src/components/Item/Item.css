@@ -114,11 +114,11 @@
     background-image: linear-gradient(144deg, #04ec04, #42f342 50%, #a5eb00);
 }
 
-.btt-infoenvio:hover::before {
+.productcard:hover .btt-infoenvio::before {
     top: -22px;
 }
 
-.btt-infoenvio:hover::after {
+.productcard:hover .btt-infoenvio::after {
     top: 0;
 }
 
