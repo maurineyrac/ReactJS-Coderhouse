@@ -10,10 +10,10 @@ const CartWidget = () => {
   return (
 
     <Nav.Link as={Link} to='/cart'>
-      <>
+      <div className="d-flex">
         <BsCart2 />
-        <span className="badge rounded-pill text-bg-dark">{itemQuantity()}</span>
-      </>
+        <span className="ms-2 badge rounded-pill text-bg-dark">{itemQuantity()}</span>
+      </div>
     </Nav.Link>
   )
 }

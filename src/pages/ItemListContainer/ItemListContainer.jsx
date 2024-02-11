@@ -34,7 +34,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
 
-    <div className="text-center">
+    <div className="d-flex justify-content-center text-center">
       {loading
         ?
         <InfinitySpin

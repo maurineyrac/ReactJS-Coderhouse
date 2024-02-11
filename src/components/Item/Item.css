@@ -19,7 +19,7 @@
 
 .productcard:hover{
     transform: scale(1.1);
-
+    box-shadow: 1px 1px 10px 0 rgba(37, 60, 75, 0.11);
 }
 .cardimg {
     padding: 5px;
