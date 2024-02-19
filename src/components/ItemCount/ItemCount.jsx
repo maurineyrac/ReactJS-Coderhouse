@@ -3,6 +3,7 @@ import ButtonP from '../Button/ButtonP'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 import { useCart } from '../../context/CartContext';
+import { toast } from '../ui/use-toast';
 
 const ItemCount = ({ stock, product }) => {
 
@@ -15,6 +16,7 @@ const ItemCount = ({ stock, product }) => {
 		if (counter < stock)
 			setCounter(counter + 1)
 	}
+
 	const handleSubstract = () => {
 		if (counter > 1)
 			setCounter(counter - 1)
@@ -24,6 +26,10 @@ const ItemCount = ({ stock, product }) => {
 		const newItem = { ...product, quantity: counter }
 
 		addToCart(newItem)
+		toast({
+			title: `${product.name} agregado al carrito`,
+			description: `Cantidad: ${counter}`,
+		})
 	}
 
 	return (
@@ -31,13 +37,14 @@ const ItemCount = ({ stock, product }) => {
 			{
 				isInCart(product.id) ?
 					<>
-						<Nav.Link as={Link} to='/cart'>
-							<div className='my-2 d-flex align-items-center justify-content-center'>
+
+						<div className='my-2 d-flex align-items-center justify-content-center'>
+							<Nav.Link as={Link} to='/cart'>
 								<ButtonP label='Ir al carrito' callback={handleAdd} stock1={stock} />
-								{console.log(counter)}
-							</div>
-						</Nav.Link>
-						
+							</Nav.Link>
+						</div>
+
+
 					</>
 					:
 					<div className='d-flex flex-column w-100'>

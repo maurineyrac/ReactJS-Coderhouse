@@ -41,10 +41,10 @@ const ItemDetail = ({ product }) => {
             <div className="flex justify-center">
               <img
                 alt="Product Image"
-                className="aspect-square object-cover border border-gray-200 rounded-lg"
-                height={400}
+                className="aspect-square object-contain object-center border border-gray-200 rounded-lg"
+                height='400'
                 src={product.img}
-                width={400}
+                width='400'
               />
             </div>
             <div className="grid gap-4 md:gap-10">
@@ -56,7 +56,7 @@ const ItemDetail = ({ product }) => {
                 <ItemCount stock={product.stock} product={product} />
               </div>
               <div>
-                <p>
+                <p>Descripcion: <br/>
                   {product.description}
                 </p>
               </div>

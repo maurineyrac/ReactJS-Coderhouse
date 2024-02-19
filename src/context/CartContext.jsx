@@ -1,3 +1,4 @@
+import { toast } from "@/components/ui/use-toast";
 import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext()
@@ -10,6 +11,7 @@ export const CartContextProvider = ({ children }) => {
 
     const addToCart = (item) => {
         setCart([...cart, item])
+ 
     }
     const isInCart = (id) => {
         return cart.some(item => item.id === id)
