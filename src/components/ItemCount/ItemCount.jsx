@@ -1,12 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import ButtonP from '../Button/ButtonP'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 import { useCart } from '../../context/CartContext';
 import { toast } from '../ui/use-toast';
+import ButtonE from '../Button/ButtonE';
+import { useModal } from '@/context/modalContext';
 
 const ItemCount = ({ stock, product }) => {
-
+	const { toggleModal } = useModal();
 	const [counter, setCounter] = useState(1)
 
 
@@ -39,8 +41,8 @@ const ItemCount = ({ stock, product }) => {
 					<>
 
 						<div className='my-2 d-flex align-items-center justify-content-center'>
-							<Nav.Link as={Link} to='/cart'>
-								<ButtonP label='Ir al carrito' callback={handleAdd} stock1={stock} />
+							<Nav.Link onClick={toggleModal} >
+								<ButtonE className='Custombutton2' label='Ir al carrito' />
 							</Nav.Link>
 						</div>
 

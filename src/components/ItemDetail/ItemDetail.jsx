@@ -9,34 +9,6 @@ const ItemDetail = ({ product }) => {
     <>
       {product &&
         <>
-          {/* <section className="card-section">
-            <div className="productcard">
-              <div className="cardimg">
-                <img src={product.img} alt="" className="cardimg2" />
-              </div>
-              <div className="cardbody">
-                <h4>{product.name}</h4>
-                <div className="cardfoot">
-                  <div className="cardsec3">
-                    <div className="precio">
-                      <h5>$ {product.price}</h5>
-                      <p className='text-center'>Precio Especial</p>
-                    </div>
-                  </div>
-
-                </div>
-                <div className="cardsec2">
-
-                  <div className="bsec2 text-center m-0 py-1 px-0">
-                    <h6>Descripcion:</h6>
-
-                    <p className='fs-6' >{product.description}</p>
-                  </div>
-                </div>
-                <ItemCount stock={product.stock} product={product} />
-              </div>
-            </div>
-          </section> */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-12 max-w-6xl px-4 mx-auto py-6">
             <div className="flex justify-center">
               <img

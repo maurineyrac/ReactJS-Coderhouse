@@ -16,9 +16,9 @@ import { PiTrashLight } from "react-icons/pi";
 const Admin = () => {
     const { authed, setAuthed } = useAuth();
     const [products, setProducts] = useState([]);
-    const { category } = useParams()
     const navigate = useNavigate();
     const productsRef = collection(db, 'products');
+    
     const fetchProducts = async (productsRef) => {
         try {
             const snapshot = await getDocs(productsRef);
@@ -30,13 +30,8 @@ const Admin = () => {
     };
 
     useEffect(() => {
-        const productsRef = category
-            ?
-            query(collection(db, "products"), where("category", "==", category))
-            :
-            collection(db, "products")
         fetchProducts(productsRef);
-    }, [category]);
+    }, []);
 
 
     const handleUpload = async () => {

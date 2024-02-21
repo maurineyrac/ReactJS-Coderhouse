@@ -1,9 +1,9 @@
 import './ButtonP.css'
 
-const ButtonE = ({ label, customclass}) => {
+const ButtonE = ({ label, className}) => {
     return (
         <>
-            <button className={`${customclass}`}>{label}</button>
+            <button className={className}>{label}</button>
         </>
     )
 }
