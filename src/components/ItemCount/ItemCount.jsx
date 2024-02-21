@@ -11,7 +11,6 @@ const ItemCount = ({ stock, product }) => {
 	const { toggleModal } = useModal();
 	const [counter, setCounter] = useState(1)
 
-
 	const { addToCart, isInCart } = useCart();
 
 	const handleAdd = () => {
@@ -52,7 +51,10 @@ const ItemCount = ({ stock, product }) => {
 					<div className='d-flex flex-column w-100'>
 						<div className='d-flex w-100 my-2 align-items-center justify-content-evenly'>
 							<ButtonP label='-' callback={handleSubstract} stock1={stock} />
-							<div>Cantidad: {counter}</div>
+							<div className=' text-left flex flex-col justify-center items-center' >
+								<div className='w-100' >Cantidad: {counter}</div>
+								<div className='flex items-center' >Stock: {stock ? stock : <p className='ml-2 text-xs font-bold' > Agotado!</p>} </div>
+							</div>
 							<ButtonP label='+' callback={handleAdd} stock1={stock} />
 						</div>
 						<div className='my-2 d-flex align-items-center justify-content-center'>
