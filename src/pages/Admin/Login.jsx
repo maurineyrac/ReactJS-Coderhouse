@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../services/fbconfig';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import ButtonAlt from '../../components/Button/ButtonAlt';
+import ButtonE from '@/components/Button/ButtonE';
 
 
 
@@ -13,7 +13,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
+    console.log('auth', password)
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -30,7 +30,7 @@ function Login() {
         <form onSubmit={(e) => handleSubmit(e)}>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Correo electrónico" />
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
-            <button>Iniciar sesion</button>
+            <ButtonE className={'m-auto Custombutton2'} label={'Iniciar Sesion'}/>
             {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
     );

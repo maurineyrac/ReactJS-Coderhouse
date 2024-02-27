@@ -2,13 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
-
 import { useCart } from "@/context/CartContext";
 import '../../components/Button/ButtonP.css'
 import { Link } from "react-router-dom";
 const Cart = () => {
 
-    const { cart, totalCart, emptyCart, removeItem } = useCart();
+    const { cart, totalCart } = useCart();
 
     return (
         <div className="container flex flex-col md:flex-row gap-6 p-8">

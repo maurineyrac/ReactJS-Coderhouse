@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
-
 import { InfinitySpin } from "react-loader-spinner";
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../services/fbconfig';

@@ -9,6 +9,8 @@ import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore'
 import { products as mockProducts } from '../../asyncMock'; // Importa los productos de asyncMock
 import ButtonAlt from "../../components/Button/ButtonAlt";
 import { PiTrashLight } from "react-icons/pi";
+import ButtonE from "@/components/Button/ButtonE";
+import { toast } from "@/components/ui/use-toast";
 
 
 
@@ -40,6 +42,10 @@ const Admin = () => {
                 await addDoc(productsRef, product);
             }));
             console.log('Productos subidos con éxito');
+            toast({
+				title: `Productos subidos con éxito`,
+				description: `Ahora estan en firebase.`,
+			})
             // Actualiza la lista de productos
             fetchProducts(productsRef);
         } catch (error) {
@@ -48,11 +54,15 @@ const Admin = () => {
     };
 
 
-    const handleDeleteProduct = async (productId) => {
+    const handleDeleteProduct = async (productId, product) => {
         try {
             await deleteDoc(doc(db, 'products', productId));
             setProducts(products.filter(product => product.id !== productId));
             console.log('Producto eliminado con éxito');
+            toast({
+				title: `Producto ${product.name} eliminado con éxito`,
+				description: `Ahora no esta en firebase.`,
+			})
         } catch (error) {
             console.error('Error al eliminar el producto', error);
         }
@@ -63,6 +73,10 @@ const Admin = () => {
             await Promise.all(products.map(product => deleteDoc(doc(db, 'products', product.id))));
             setProducts([]);
             console.log('Todos los productos fueron eliminados con éxito');
+            toast({
+				title: `Productos eliminados con éxito`,
+				description: `Ahora no estan en firebase.`,
+			})
         } catch (error) {
             console.error('Error al eliminar todos los productos', error);
         }
@@ -80,12 +94,12 @@ const Admin = () => {
 
     if (!authed) {
         return (
-            <>
-                <div>No estás autorizado para ver esta página.</div>
+            <div className="flex justify-center items-center flex-column" >
+                <div className="mt-3" >No estás autorizado para ver esta página.</div>
                 <Link to='/login'>
-                    <button>Iniciar sesion</button>
+                    <ButtonE className={'Custombutton2 mt-3'} label={'Iniciar sesion'} />
                 </Link>
-            </>
+            </div>
         );
     }
 
@@ -98,7 +112,7 @@ const Admin = () => {
                 {products.map(product => (
                     <li className="d-flex m-2" key={product.id}>
                         <div className="me-3">* Modelo: {product.name} - Precio: {product.price} - Stock: {product.stock}</div>
-                        <ButtonAlt label={<PiTrashLight />} callback={() => handleDeleteProduct(product.id)} />
+                        <ButtonAlt label={<PiTrashLight />} callback={() => handleDeleteProduct(product.id, product)} />
                     </li>
                 ))}
             </ul>

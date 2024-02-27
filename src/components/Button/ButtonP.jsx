@@ -1,8 +1,8 @@
 import './ButtonP.css'
-const ButtonP = ({ label, callback, stock1 }) => {
+const ButtonP = ({ className, label, callback, stock1 }) => {
     return (
         <>
-            <button className='Custombutton2' onClick={() => callback()} disabled={!stock1} >{label}</button>
+            <button className={`${className} Custombutton2`} onClick={() => callback()} disabled={!stock1} >{label}</button>
         </>
     )
 }
