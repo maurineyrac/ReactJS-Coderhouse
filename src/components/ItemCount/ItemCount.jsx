@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import ButtonP from '../Button/ButtonP'
 import { useCart } from '../../context/CartContext';
 import { toast } from '../ui/use-toast';
+import { Link } from 'react-router-dom';
 
 
 const ItemCount = ({ stock, product }) => {
 
 	const [counter, setCounter] = useState(1)
-	console.log(counter)
+
 	const { cart, addToCart, updateCartItems, itemQuantity } = useCart();
 
 	const handleAdd = () => {
@@ -52,6 +53,7 @@ const ItemCount = ({ stock, product }) => {
 			toast({
 				title: `${product.name} agregado al carrito`,
 				description: `Cantidad: ${counter}`,
+				
 			})
 		}
 
@@ -60,10 +62,13 @@ const ItemCount = ({ stock, product }) => {
 				variant: 'destructive',
 				title: `La cantidad a agregar debe ser mayor a 0`,
 				description: `Cantidad: ${counter}`,
+				
 			})
 		}
 	}
-
+    
+	
+	
 
 	return (
 		<>
@@ -82,7 +87,7 @@ const ItemCount = ({ stock, product }) => {
 					<div className='my-2 d-flex align-items-center justify-content-center'>
 						<ButtonP label='Agregar al carrito' callback={handleAddToCart} stock1={stock} />
 					</div>
-				</div>
+				</div>	
 			}
 		</>
 	)

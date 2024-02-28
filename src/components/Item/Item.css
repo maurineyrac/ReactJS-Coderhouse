@@ -8,13 +8,14 @@
 .productcard {
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    max-width:210px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: auto;
     transition: all .2s;
+    width: 100%;
 }
 
 .productcard:hover{
@@ -22,13 +23,14 @@
     box-shadow: 1px 1px 10px 0 rgba(37, 60, 75, 0.11);
 }
 .cardimg {
-    padding: 5px;
+    padding: 2px;
     display: flex;
     justify-content: center;
-    height: 165px;
-    width: 165px;
+    height: 210px;
+    width: 210px;
     max-width:210px;
 }
+
 .cardimg2 {
     object-fit: contain;
     max-width: 100%;
@@ -59,19 +61,17 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 140px;
+    
 
 }
 
 .btt-infoenvio {
     color: white;
     border-radius: 5px;
-    /* background-color: rgb(49, 197, 255); */
     background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     padding: 6px 15px;
     width: 100%;
-    max-width: 140px;
     position: relative;
     height: 22px;
     overflow: hidden;
@@ -164,10 +164,8 @@
 .cardfoot {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
-    /* z-index: 1001; */
-    
-    margin: 10px 0 10px;
+    justify-content: space-between;
+    padding: 10px;
 
 }
 
@@ -183,4 +181,20 @@
     color: rgb(146, 146, 146);
     line-height: 0.6rem;
 
+}
+
+@media screen and (min-width: 576px){
+    .productcard {
+        max-width: 175px;
+    } 
+    .cardimg {
+        height: 175px;
+        width:175px;
+    } 
+    .cardsec1 {
+        max-width: 150px;
+    }
+    .cardfoot{
+        justify-content: space-evenly;
+    }
 }

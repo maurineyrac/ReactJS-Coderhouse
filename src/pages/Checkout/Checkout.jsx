@@ -172,12 +172,12 @@ const Checkout = () => {
                 <div>
                   <img
                     alt={item.name}
-                    className="object-cover rounded-md mr-4"
+                    className="rounded-md mr-4"
                     height={80}
                     src={item.img}
                     style={{
                       aspectRatio: "80/80",
-                      objectFit: "cover",
+                      objectFit: "contain",
                     }}
                     width={80}
                   />
@@ -202,7 +202,7 @@ const Checkout = () => {
           <CardFooter className="flex justify-center">
             
             <Link to={'../cart'} >
-            <Button variant="outline">Volver a carrito</Button>
+            <Button className='Custombutton2' variant="outline">Volver a carrito</Button>
             </Link>
           </CardFooter>
         </Card>

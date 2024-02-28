@@ -34,12 +34,11 @@ const Cart = () => {
                                             <TableCell>
                                                 <img
                                                     alt={item.name}
-                                                    className="object-cover w-12 h-12"
                                                     height="50"
                                                     src={item.img}
                                                     style={{
                                                         aspectRatio: "50/50",
-                                                        objectFit: "cover",
+                                                        objectFit: "contain",
                                                     }}
                                                     width="50"
                                                 />

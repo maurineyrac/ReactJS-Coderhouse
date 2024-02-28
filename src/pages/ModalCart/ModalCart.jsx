@@ -33,7 +33,7 @@ const ModalCart = () => {
                     src={item.img}
                     style={{
                       aspectRatio: "50/50",
-                      objectFit: "cover",
+                      objectFit: "contain",
                     }}
                     width="55"
                   />
@@ -56,11 +56,11 @@ const ModalCart = () => {
               <p className="text-2xl font-semibold">${totalCart()}</p>
             </div>
             <div className="pt-6 flex justify-evenly items-center">
-              <Nav.Link onClick={toggleModal} as={Link} to='/cart'>
-                <ButtonE label='Comprar' className='Custombutton2' />
-              </Nav.Link>
               <Nav.Link onClick={toggleModal} as={Link} to='/'>
-                <ButtonE label='Ver más artículos' className='Custombutton2 bg-green-600 hover:bg-green-600/80' />
+                <ButtonE label='Volver' className='Custombutton2 w-20' />
+              </Nav.Link>
+              <Nav.Link onClick={toggleModal} as={Link} to='/cart'>
+                <ButtonE label='Comprar' className='Custombutton2 bg-green-600 hover:bg-green-600/80 w-20' />
               </Nav.Link>
               <ButtonP label='Vaciar carrito' callback={emptyCart} stock1={cart.length} />
             </div>
